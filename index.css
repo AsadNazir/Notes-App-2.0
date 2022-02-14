@@ -1,0 +1,168 @@
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    background-color: purple;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    box-sizing: border-box;
+    height: 300vh;
+}
+
+:root {
+    --font-size1: clamp(1.75rem, 3vw, 3rem);
+    --font-size2: clamp(1.3rem, 1.6vw, 1.7rem);
+    --font-size3: clamp(1rem, 1.3vw, 1.2rem);
+}
+
+
+/* Utility Class */
+
+.hover:hover {
+    cursor: pointer;
+}
+
+textarea {
+    resize: none;
+    display: block;
+    width: clamp(290px, 90%, 600px);
+    margin: 1.2rem auto;
+    padding: 0.5rem 1rem;
+    font-size: var(--font-size3);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    border-radius: 5px;
+}
+
+#body {
+    height: 10rem;
+}
+
+#heading {
+    height: 2rem;
+}
+
+body>h1 {
+    font-size: var(--font-size1);
+    color: white;
+    text-align: center;
+}
+
+.cont {
+    /* border: 2px solid white; */
+    width: clamp(300px, 90vw, 600px);
+    margin: 1rem auto;
+}
+
+
+/* Add Button */
+
+.add {
+    font-size: var(--font-size3);
+    background-color: green;
+    color: white;
+    outline: none;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    display: block;
+}
+
+
+/* Editor containing Text Boxes
+ */
+
+.Editor {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+
+/* Note list */
+
+.note_list {
+    width: 100%;
+    margin: 2rem auto;
+}
+
+.item {
+    background-color: white;
+    padding: 0.5rem 1rem;
+    width: clamp(290px, 90%, 600px);
+    margin: 1rem auto;
+    border-radius: 5px;
+    transition: 0.3s all ease-in-out;
+}
+
+.check {
+    text-decoration: line-through;
+    background-color: grey;
+}
+
+.head_list {
+    display: flex;
+    justify-content: space-between;
+    text-overflow: ellipsis;
+    width: 100%;
+}
+
+.item h1 {
+    font-size: var(--font-size2);
+    color: purple;
+    font-weight: 400;
+}
+
+.open {
+    font-size: var(--font-size3);
+    color: black;
+    /* transform: scaleY(1);
+    transform-origin: top; */
+    /* margin: inherit; */
+    min-height: 3rem;
+    opacity: 1;
+    transition: 0.3s all ease-in-out;
+}
+
+.close {
+    font-size: var(--font-size3);
+    color: black;
+    /* This going to remove the P */
+    transform: scaleY(0);
+    transform-origin: top;
+    margin-top: 0rem;
+    margin-bottom: 0rem;
+    min-height: 0;
+    max-height: 0;
+    opacity: 0;
+    transition: 0.2s all;
+}
+
+.icons span {
+    margin: 0 0.7rem;
+}
+
+.item i {
+    font-size: var(--font-size2);
+    color: rgb(99, 98, 98);
+    transition: 0.2s all ease-in-out;
+}
+
+.icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.trash:hover i {
+    color: rgb(255, 0, 0);
+    cursor: pointer;
+}
+
+.checkMark:hover i {
+    color: rgb(0, 199, 0);
+    cursor: pointer;
+}
+
+.down:hover i {
+    color: black;
+    cursor: pointer;
+}
