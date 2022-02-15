@@ -1,13 +1,17 @@
-// All the GLobal Variable Over here
-// let ArrowDown = [];
-// let Para = [];
-// let Check = [];
-// let items = [];
 let addButton = document.querySelector(`.add`);
 let NotesList = document.querySelector(`.note_list`);
 let NotesArr = [];
 
-show();
+function DeleteFucntion(index) {
+    console.log("Clicked at index " + index);
+    NotesArr.splice(index, 1);
+    show();
+
+}
+
+
+
+// Drop Down Menu Fucntion
 
 function DropDown() {
     // Adding Event Listeners on DropDwon here
@@ -15,7 +19,7 @@ function DropDown() {
     let Para = document.querySelectorAll(`.item p`);
 
     for (let index = 0; index < ArrowDown.length; index++) {
-        console.log(ArrowDown[index]);
+
         ArrowDown[index].addEventListener("click", function() {
 
 
@@ -30,6 +34,9 @@ function DropDown() {
         });
     }
 }
+
+
+//Check Function
 
 function Checked() {
     // Adding Event Listeners To Check and Uncheck Over Here
@@ -54,9 +61,9 @@ function Checked() {
         }
     }
 }
-// Getting The text from text Areas
 addButton.addEventListener("click", function() {
 
+    // Getting The text from text Areas
     // Head Text Area
     let HeadTextArea = document.getElementById(`heading`);
     // Body Text Area
@@ -74,8 +81,6 @@ addButton.addEventListener("click", function() {
 
     // Functions Over Here for Checked Drop Down and Delete and Show
     show();
-    DropDown();
-    Checked();
 })
 
 // Show Function Over here
@@ -89,7 +94,7 @@ function show() {
             ${NotesArr[index].heading}
             </h1>
             <div class="icons">
-                <span class="hover trash"><i class="fas fa-trash"></i></span>
+                <span class="hover trash"><i class="fas fa-trash" id ="${index}" onclick="DeleteFucntion(this.id)"></i></span>
                 <span class="hover checkMark"><i class="fa-solid fa-square-check"></i></span>
                 <span class="hover down"><i class="fas fa-angle-down"></i></span>
             </div>
@@ -98,9 +103,11 @@ function show() {
            ${NotesArr[index].body}
         </p>
         </div>`
-        console.log(NotesArr[index].heading);
-        console.log(NotesArr[index].body);
+
     }
+
+    DropDown();
+    Checked();
 }
 
 // template of item over here 
